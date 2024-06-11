@@ -52,6 +52,13 @@ class Snake: # <- Defining the Class for the Snake.
                 self.squares[i].goto(new_x,new_y)
         self.head.forward(MOVE_DISTANCE)
     
+    def reset(self):
+        for i in self.squares:
+            i.goto(1000,1000) 
+        self.squares.clear()
+        self.create_snake()
+        self.head = self.squares[0]
+        
     # The following functions are to determine the direction the snake can
     # move in and sets current rules for snake movement.
     def up(self):
